@@ -1,0 +1,19 @@
+{
+  "name": "microservice-communication-encryption",
+  "version": "1.0.0",
+  "description": "Encryption between all the microservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sustainablility/microservice-communication-encryption.git"
+  },
+  "author": "Linbin Pang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sustainablility/microservice-communication-encryption/issues"
+  },
+  "homepage": "https://github.com/sustainablility/microservice-communication-encryption#readme"
+}

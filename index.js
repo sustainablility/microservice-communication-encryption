@@ -1,5 +1,5 @@
 let crypto = require('crypto');
-let config = require('../../config');
+let config = require('./config');
 
 /**
  * Encrypt data
@@ -9,7 +9,7 @@ let config = require('../../config');
  */
 function encrypt(data){
     try {
-        let cipher = crypto.createCipheriv('aes-128-cbc', config.encryption.key, config.encryption.iv);
+        let cipher = crypto.createCipheriv('aes-128-cbc', config.key, config.iv);
         let crypted = cipher.update(data, 'utf8', 'binary');
         crypted += cipher.final('binary');
         crypted = new Buffer(crypted, 'binary').toString('base64');
@@ -28,7 +28,7 @@ function encrypt(data){
 function decrypt(crypted){
     try {
         crypted = new Buffer(crypted, 'base64').toString('binary');
-        let decipher = crypto.createDecipheriv('aes-128-cbc', config.encryption.key, config.encryption.iv);
+        let decipher = crypto.createDecipheriv('aes-128-cbc', config.key, config.iv);
         let decoded = decipher.update(crypted, 'binary', 'utf8');
         decoded += decipher.final('utf8');
         return decoded;
